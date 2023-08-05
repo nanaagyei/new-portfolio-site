@@ -1,0 +1,593 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+}
+
+/* Path: css/variables.css */
+:root {
+    --color-primary: #29d882;
+    --color-primary-variant: #00bd95;
+    --color-white: #ffff;
+    --color-black: #21272f;
+    --color-dark: #88949b;
+
+    --transition: .4s ease;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    background: var(--color-white);
+    color: var(--color-black);
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 130%;
+}
+
+h3 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 130%;
+}
+
+p {
+    color: var(--color-dark);
+    line-height: 150%;
+    font-size: 19px;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 14px 32px;
+    font-weight: 500;
+    font-size: 19px;
+    border-radius: 30px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 02px 06px rgba(0, 0, 0, 0.4);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--color-primary-variant);
+    cursor: pointer;
+    transform: translateY(-8%);
+    box-shadow: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1420px;
+}
+
+/*......................Start Nav Bar .....................*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-black);
+}
+
+.logo span {
+     color: var(--color-dark);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    pointer-events: auto;
+}
+
+.nav-links li a {
+    font-size: 19px;
+    color: var(--color-dark);
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover {
+    color: var(--color-black);
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover::before {
+    width: 100%;
+}
+
+.active {
+    color: var(--color-black) !important;
+}
+
+.active::before {
+    width: 100% !important;
+}
+
+.menu-icon {
+    display: none;
+}
+/*......................End Nav Bar .....................*/
+
+
+/* .....................Start Header Section................... */
+header {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.header-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 30rem;
+    gap: 4rem;
+}
+
+.header-container h3 {
+    margin: .7rem 0;
+    color: var(--color-primary);
+}
+
+.header-container p {
+    margin: 0 0 1.8rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    height: 28rem;
+    width: 28rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-primary);
+    position: relative;
+    animation: CircleAni linear infinite 20s;
+}
+
+@keyframes CircleAni{
+    to {
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.circle a {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-primary);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    font-size: 22px;
+    position: absolute;
+    transition: var(--transition);
+}
+
+.circle a:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.circle a:nth-child(1) {
+    left: calc(50% - 2rem);
+    top: -2rem;
+}
+.circle a:nth-child(2) {
+    top: calc(50% - 2rem);
+    right: -2rem;
+}
+.circle a:nth-child(3) {
+    top: calc(50% - 2rem);
+    left: -2rem;
+}
+.circle a:nth-child(4) {
+    left: calc(50% - 2rem);
+    bottom: -2rem;
+}
+
+.image {
+    position: absolute;
+    height: 22rem;
+    width: 22rem;
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+} 
+/*......................End Header Section......................*/
+
+
+/* .......................Start Skills Section..................... */
+#skills {
+    padding: 80px 0;
+    background-color: #edfaf2; 
+  }
+  
+  .skills-container {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .skills-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .skills-header h2 {
+    font-size: 45px;
+    margin-bottom: 10px; 
+  }
+  
+  .skills-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+  }
+  
+  .skill-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+  }
+  
+  .skill-card:hover {
+    background: var(--color-white);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skill-card img {
+    width: 60px;
+    transition: 0.3s ease;
+  }
+  
+  .skill-card:hover img {
+    filter: brightness(95%) saturate(50%) invert(0%) sepia(7%) saturate(70%) hue-rotate(20deg) brightness(95%) contrast(100%);
+  }
+  
+  .skill-card h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: var(--color-black);
+  }
+  /*...........................End Skills Section.................... */
+
+  /*.......................Start Portfolio Section......................*/
+  #portfolio {
+  padding: 80px 0;
+}
+
+.portfolio-container {
+  max-width: 980px;
+  margin: 0 auto;  
+  text-align: center;
+}
+
+.portfolio-container h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.portfolio-card {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+} 
+
+.portfolio-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.portfolio-card h3 {
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
+
+.portfolio-card p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* ........................End Portfolio Section........................ */
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    padding: 10px;
+    border: none; 
+    border-radius: 5px;
+    background: var(--color-primary); 
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 0.3s; 
+  }
+  
+  #backToTop.show {
+    opacity: 1;
+  }
+
+/* ........................Start Contact Section........................ */
+#contact {
+    padding: 80px 0;
+  }
+  
+  .contact-container {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .contact-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .contact-methods {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  
+  .contact-phone, 
+  .contact-email,
+  .contact-address {
+    text-align: center;
+  }
+  
+  .contact-phone i,
+  .contact-email i,
+  .contact-address i {
+    font-size: 25px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  form input, 
+  form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--color-primary);
+    outline: none;
+    color: var(--color-dark);
+    border-radius: 5px;
+  }
+  
+  form .btn { 
+    width: 100%;
+    text-align: center;
+  }
+
+/* ........................End Contact Section.......................... */
+
+/* ........................Start Footer Section........................ */
+
+footer {
+    background: #cef7d7;
+    color: #fff;
+    padding: 20px 0; 
+  }
+  
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .contact-container h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-left p {
+    margin: 0;
+  }
+  
+  .footer-right a {
+    color: var(--color-dark);
+    padding: 0 10px;
+  }
+  
+  /* Make footer stick to bottom */
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+  
+  main {
+    flex: 1;
+  }
+
+  /*.............................. Responsiveness....................*/
+  /* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+
+    .nav-links li {
+      margin: 10px 0; 
+    }
+  
+    .header-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .header-left, 
+    .header-right {
+      justify-content: center;
+    }
+  
+    .skills-content,
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .contact-methods {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Show the links in a mobile menu when the "menu" button is clicked */
+    .nav-links.active { 
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        gap: 2rem;
+    }
+}
+  
+/* Tablets - 768px to 992px */
+@media screen and (max-width: 992px) {
+
+    .nav-container {
+      padding: 1rem 2rem; 
+    }
+    
+    .header-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .header-left,
+    .header-right {
+      align-items: center;
+    }
+    
+    .skills-content, 
+    .portfolio-grid {
+     grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .contact-methods {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+  }
+  
+ /* Desktops - 992px and above */
+@media screen and (min-width: 992px) {
+
+    .container {
+      max-width: 80%;
+    }
+    
+    h1 {
+      font-size: 3rem;
+    }
+    
+    .nav-container {
+      padding: 1rem 5rem;
+    }
+  
+    .header-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills-content {
+      grid-template-columns: repeat(4, 1fr); 
+    }
+    
+    .contact-form {
+      max-width: 70%;
+    }
+    
+  }
+  
+  /* General responsive styles */
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .container {
+    max-width: 90%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
