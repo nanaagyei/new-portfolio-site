@@ -152,9 +152,6 @@ nav {
     width: 100% !important;
 }
 
-.menu-icon {
-    display: none;
-}
 /*......................End Nav Bar .....................*/
 
 
@@ -252,6 +249,14 @@ header {
     border-radius: 50%;
     background: var(--color-primary);
 } 
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition);
+}
 /*......................End Header Section......................*/
 
 
