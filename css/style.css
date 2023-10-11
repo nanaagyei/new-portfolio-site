@@ -67,6 +67,8 @@ img {
     color: var(--color-white);
     box-shadow: 0 02px 06px rgba(0, 0, 0, 0.4);
     transition: var(--transition);
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 .btn:hover {
